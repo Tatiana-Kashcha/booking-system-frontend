@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Booking System",
-  description: "Booking System frontend project",
+  description: "Platform for scheduling appointments",
 };
 
 export default function RootLayout({
