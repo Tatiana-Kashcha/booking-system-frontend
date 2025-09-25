@@ -1,3 +1,6 @@
+import { Header } from "../ui/components/Header/Header";
+import { Footer } from "../ui/components/Footer/Footer";
+
 export default function PagesLayout({
   children,
 }: {
@@ -5,7 +8,9 @@ export default function PagesLayout({
 }) {
   return (
     <>
+      <Header />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

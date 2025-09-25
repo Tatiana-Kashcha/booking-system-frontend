@@ -1,3 +1,13 @@
+import styles from "./page.module.css";
+
 export default function BusinessPage() {
-  return <h1>BusinessPage</h1>;
+  return (
+    <main>
+      <section>
+        <div className={styles.container}>
+          <h2>Business Page</h2>
+        </div>
+      </section>
+    </main>
+  );
 }

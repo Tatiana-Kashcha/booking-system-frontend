@@ -14,7 +14,8 @@ const setAuthHeader = (token: string) => {
 };
 
 const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = "";
+  // axios.defaults.headers.common.Authorization = "";
+  delete axios.defaults.headers.common.Authorization;
 };
 
 /*

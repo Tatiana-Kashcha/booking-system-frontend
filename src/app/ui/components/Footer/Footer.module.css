@@ -1,0 +1,14 @@
+.footer {
+    background: #cddaef;
+    border-top: 5px solid #1e73a3;
+}
+
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
