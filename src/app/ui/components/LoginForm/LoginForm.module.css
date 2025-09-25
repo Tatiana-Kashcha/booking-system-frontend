@@ -1,0 +1,75 @@
+.container {
+  width: 500px;
+}
+
+.form {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  background-color: #cddaef;
+  box-shadow: -1px 1px 40px 3px #1e73a3
+} 
+
+.label{
+  font-size: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  max-width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #1e73a3;
+  border-radius: 4px;
+}
+
+.input:focus {
+  border-color: rgb(99, 149, 241, 0.6);
+  outline: 2px rgba(99, 149, 241, 0.6);
+  outline-style: solid;
+}
+
+
+.div_password {
+position: relative;
+}
+
+.toggle_btn {
+  position: absolute;
+  width: 30px;
+  right: 18px;
+  top: 30px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.photo {
+  object-fit: cover;
+  
+}
+
+.div_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  padding: 12px 24px;
+  background-color: #1e73a3;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #1e73a3;
+  border-radius: 4px;
+  min-width: 100px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+  color: #1e73a3;
+}
+
