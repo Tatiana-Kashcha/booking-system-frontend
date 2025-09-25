@@ -12,9 +12,9 @@ import hideIcon from "../../icons/eye-slash.svg";
 import styles from "./LoginForm.module.css";
 
 export const LoginForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   // const auth = getAuth();
 

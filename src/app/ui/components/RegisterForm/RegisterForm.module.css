@@ -1,5 +1,6 @@
 .container {
   width: 500px;
+  margin-bottom: 60px;
 }
 
 .form {
@@ -10,7 +11,7 @@
   box-shadow: -1px 1px 40px 3px #1e73a3
 } 
 
-.label{
+.label {
   font-size: 20px;
   margin-bottom: 20px;
   display: flex;
@@ -32,6 +33,27 @@
   outline-style: solid;
 }
 
+.radio_group {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+} 
+
+.input_radio {
+  width: 20px;
+    height: 20px;
+    accent-color: #169419;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
+.label_radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
 .div_password {
 position: relative;
@@ -48,7 +70,6 @@ position: relative;
 
 .photo {
   object-fit: cover;
-  
 }
 
 .div_button{
