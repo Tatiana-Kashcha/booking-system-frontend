@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import Image from "next/image";
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { login } from "@/app/actions/auth";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 import showIcon from "../../icons/eye.svg";
@@ -16,23 +17,22 @@ export const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  // const auth = getAuth();
+  const router = useRouter();
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      // const userCredential = await signInWithEmailAndPassword(
-      //   auth,
-      //   form.elements.email.value,
-      //   form.elements.password.value
-      // );
+      const userCredential = await login({ email, password });
+      if (userCredential) {
+        router.push("/business");
+      }
 
-      console.log("Login data:", { email, password });
+      console.log(userCredential);
     } catch (error) {
       console.log(error);
       Notify.failure("Login error. Please check the data.");

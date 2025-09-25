@@ -8,3 +8,8 @@ export interface CreateUserDto {
   profession?: string;
   description?: string;
 }
+
+export interface LoginUserDto {
+  email: string;
+  password: string;
+}

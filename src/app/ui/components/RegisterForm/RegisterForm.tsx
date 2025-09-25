@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { register } from "@/app/actions/auth";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 import { Role } from "../../types/users/dto/user-response.dto";
@@ -19,15 +21,17 @@ export const RegisterForm = () => {
   const [description, setDescription] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const router = useRouter();
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      console.log("Register data:", {
+      const userCredential = await register({
         name,
         email,
         password,
@@ -35,6 +39,12 @@ export const RegisterForm = () => {
         profession,
         description,
       });
+
+      if (userCredential) {
+        router.push("/business");
+      }
+
+      console.log(userCredential);
     } catch (error) {
       console.log(error);
       Notify.failure("Register error. Please check the data.");
@@ -118,29 +128,32 @@ export const RegisterForm = () => {
               className={styles.photo}
             />
           </span>
-
-          <label className={styles.label}>
-            Profession
-            <input
-              type="text"
-              name="profession"
-              placeholder="Your profession"
-              value={profession}
-              onChange={(e) => setProfession(e.target.value)}
-              className={styles.input}
-            />
-          </label>
-          <label className={styles.label}>
-            Description
-            <textarea
-              name="description"
-              placeholder="Enter description..."
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              className={styles.input}
-              rows={4}
-            />
-          </label>
+          {role === Role.BUSINESS && (
+            <>
+              <label className={styles.label}>
+                Profession
+                <input
+                  type="text"
+                  name="profession"
+                  placeholder="Your profession"
+                  value={profession}
+                  onChange={(e) => setProfession(e.target.value)}
+                  className={styles.input}
+                />
+              </label>
+              <label className={styles.label}>
+                Description
+                <textarea
+                  name="description"
+                  placeholder="Enter description..."
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  className={styles.input}
+                  rows={4}
+                />
+              </label>
+            </>
+          )}
         </div>
 
         <div className={styles.div_button}>
