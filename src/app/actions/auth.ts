@@ -11,10 +11,10 @@ axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const setAuthHeader = (token: string) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  console.log(axios.defaults.headers.common.Authorization);
 };
 
 const clearAuthHeader = () => {
-  // axios.defaults.headers.common.Authorization = "";
   delete axios.defaults.headers.common.Authorization;
 };
 
@@ -69,26 +69,6 @@ export async function logOut() {
   }
 }
 
-/*
- * GET @  /auth/current
- * headers: Authorization: Bearer token
- */
-// export async function refreshUser  {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
-
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue("Unable to fetch user");
-//     }
-
-//     try {
-//       setAuthHeader(persistedToken);
-
-//       const res = await axios.get("/auth/current");
-
-//       return res.data;
-//     } catch (error) {
-//       return new Error("Oops, something went wrong!");
-//     }
-//   }
-// );
+export function refreshUser(token: string) {
+  setAuthHeader(token);
+}

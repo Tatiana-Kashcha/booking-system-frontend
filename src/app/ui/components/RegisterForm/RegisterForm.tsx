@@ -41,10 +41,9 @@ export const RegisterForm = () => {
       });
 
       if (userCredential) {
+        localStorage.setItem("authToken", userCredential.token);
         router.push("/business");
       }
-
-      console.log(userCredential);
     } catch (error) {
       console.log(error);
       Notify.failure("Register error. Please check the data.");
@@ -113,6 +112,7 @@ export const RegisterForm = () => {
               name="password"
               placeholder="Your password"
               value={password}
+              minLength={6}
               onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
               required

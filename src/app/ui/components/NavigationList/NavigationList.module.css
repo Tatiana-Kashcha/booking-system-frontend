@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.button_nav {
+    padding: 10px 20px;
+    background-color: #1e73a3;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #1e73a3;
+    border-radius: 4px;
+    min-width: 100px;
+    text-decoration: none;
+}
+
+.button_nav:hover {
+    background-color: white;
+    color: #1e73a3;
+}
+
+.activeLink {
+    color: #1e73a3;
+    text-decoration:underline;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 7px 1px #1e73a3;
+}
+

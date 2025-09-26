@@ -5,7 +5,7 @@ export default function BusinessPage() {
     <main>
       <section>
         <div className={styles.container}>
-          <h2>Business Page</h2>
+          <h2>Business List</h2>
         </div>
       </section>
     </main>

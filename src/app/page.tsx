@@ -17,7 +17,10 @@ export default function Home() {
               priority
             />
           </div>
-          <h1 className={styles.title}>Welcome to Booking System !</h1>
+          <h1 className={styles.title}>
+            Welcome to {"'"}Booking System{"'"}!
+          </h1>
+          <span className={styles.span}>Here people go to people {";)"}</span>
           <div className={styles.buttons}>
             <Link href="/register" className={styles.button}>
               Register
