@@ -50,7 +50,7 @@ export const Header = () => {
           type="button"
           onClick={handleLogout}
         >
-          Logout {"[-->"}
+          Logout {"[---"}
         </button>
       </div>
     </header>
