@@ -6,7 +6,7 @@
 
 .descriptions_div {
     display: flex;
-    gap: 40px;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
@@ -38,12 +38,29 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    min-width: 340px;
 }
 
 .descriptions_span {
     font-weight: 500;
     font-size: 14px;
     color: #1c9dee
+}
+
+.button_appointments {
+    padding: 10px 16px;
+    background-color: #5eaedc;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #5eaedc;
+    border-radius: 4px;
+    max-height: 20px;
+    text-decoration: none;
+}
+
+.button_appointments:hover {
+    background-color: white;
+    color: #52819c;
 }
 
 .p_profession {

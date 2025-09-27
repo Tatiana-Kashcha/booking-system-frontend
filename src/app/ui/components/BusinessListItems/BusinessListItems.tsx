@@ -39,6 +39,12 @@ export const BusinessListItems = ({
             </p>
           </div>
         </div>
+        <Link
+          href={`/business/${userBusiness.id}`}
+          className={styles.button_appointments}
+        >
+          Visit
+        </Link>
       </div>
       <p className={styles.p_profession}>
         {userBusiness.description ? userBusiness.description : ""}
