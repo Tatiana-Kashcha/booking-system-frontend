@@ -10,3 +10,8 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.button_logout:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
