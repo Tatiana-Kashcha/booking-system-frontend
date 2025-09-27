@@ -11,7 +11,6 @@ axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const setAuthHeader = (token: string) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  console.log(axios.defaults.headers.common.Authorization);
 };
 
 const clearAuthHeader = () => {

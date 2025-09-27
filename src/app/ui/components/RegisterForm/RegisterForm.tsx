@@ -20,6 +20,7 @@ export const RegisterForm = () => {
   const [profession, setProfession] = useState("");
   const [description, setDescription] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const router = useRouter();
 
@@ -31,6 +32,7 @@ export const RegisterForm = () => {
     e.preventDefault();
 
     try {
+      setIsDisabled(true);
       const userCredential = await register({
         name,
         email,
@@ -47,6 +49,8 @@ export const RegisterForm = () => {
     } catch (error) {
       console.log(error);
       Notify.failure("Register error. Please check the data.");
+    } finally {
+      setIsDisabled(false);
     }
   };
 
@@ -157,7 +161,7 @@ export const RegisterForm = () => {
         </div>
 
         <div className={styles.div_button}>
-          <button type="submit" className={styles.button}>
+          <button type="submit" className={styles.button} disabled={isDisabled}>
             Register
           </button>
         </div>

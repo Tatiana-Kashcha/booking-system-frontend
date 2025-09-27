@@ -16,6 +16,7 @@ export const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const router = useRouter();
 
@@ -34,6 +35,7 @@ export const LoginForm = () => {
     e.preventDefault();
 
     try {
+      setIsDisabled(true);
       const userCredential = await login({ email, password });
       if (userCredential) {
         localStorage.setItem("authToken", userCredential.token);
@@ -42,6 +44,8 @@ export const LoginForm = () => {
     } catch (error) {
       console.log(error);
       Notify.failure("Login error. Please check the data.");
+    } finally {
+      setIsDisabled(false);
     }
   };
 
@@ -92,7 +96,11 @@ export const LoginForm = () => {
           </div>
 
           <div className={styles.div_button}>
-            <button type="submit" className={styles.button}>
+            <button
+              type="submit"
+              className={styles.button}
+              disabled={isDisabled}
+            >
               Login
             </button>
           </div>

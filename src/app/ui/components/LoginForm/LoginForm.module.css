@@ -74,3 +74,8 @@ position: relative;
   color: #1e73a3;
 }
 
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
