@@ -11,8 +11,6 @@ import styles from "./BusinessList.module.css";
 export const BusinessList = () => {
   const [businessArr, setBusinessArr] = useState<UserData[] | null>([]);
 
-  console.log(businessArr);
-
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (!token) return;
