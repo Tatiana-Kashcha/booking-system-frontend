@@ -162,7 +162,7 @@ export const RegisterForm = () => {
 
         <div className={styles.div_button}>
           <button type="submit" className={styles.button} disabled={isDisabled}>
-            Register
+            {isDisabled ? "Register..." : "Register"}
           </button>
         </div>
       </form>

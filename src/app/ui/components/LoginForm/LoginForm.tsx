@@ -101,7 +101,7 @@ export const LoginForm = () => {
               className={styles.button}
               disabled={isDisabled}
             >
-              Login
+              {isDisabled ? "Login..." : "Login"}
             </button>
           </div>
         </form>

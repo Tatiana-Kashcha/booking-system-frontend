@@ -58,9 +58,10 @@ position: relative;
 }
 
 .button {
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: #1e73a3;
   color: white;
+  font-size: 16px;
   font-weight: bold;
   border: 1px solid #1e73a3;
   border-radius: 4px;

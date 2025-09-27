@@ -30,7 +30,7 @@ export const LogoutBtn = () => {
       disabled={isDisabled}
       onClick={handleLogout}
     >
-      Logout {"[---"}
+      {isDisabled ? "...Logout" : "Logout"} {"[---"}
     </button>
   );
 };

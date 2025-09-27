@@ -1,0 +1,19 @@
+.business_div {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    width: 600px;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

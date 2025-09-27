@@ -1,11 +1,12 @@
 import styles from "./page.module.css";
+import { BusinessList } from "@/app/ui/components/BusinessList/BusinessList";
 
-export default function BusinessPage() {
+export default async function BusinessPage() {
   return (
     <main>
       <section>
         <div className={styles.container}>
-          <h2>Business List</h2>
+          <BusinessList />
         </div>
       </section>
     </main>
