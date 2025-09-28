@@ -1,22 +1,22 @@
-.button_logout {
+.button_delete {
     padding: 10px 20px;
-    background-color: #1e73a3;
+    background-color: #e92f2f;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    border: 1px solid #1e73a3;
+    border: 1px solid #e92f2f;
     border-radius: 4px;
     min-width: 100px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.button_logout:disabled {
+.button_delete:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-.button_logout:hover {
+.button_delete:hover {
     background-color: white;
-    color: #1e73a3;
+    color: #e92f2f;
 }

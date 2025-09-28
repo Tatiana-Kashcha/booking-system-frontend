@@ -6,6 +6,7 @@ import {
   LoginUserDto,
 } from "../ui/types/users/dto/create-user.dto";
 import { UserResponseDto } from "../ui/types/users/dto/user-response.dto";
+import { UpdateUserDto } from "../ui/types/users/dto/update-user.dto";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -17,7 +18,7 @@ const clearAuthHeader = () => {
   delete axios.defaults.headers.common.Authorization;
 };
 
-/*
+/* This is a description of the backend:
  * POST @  /auth/register
  * body: { name, email, password, role, profession?,  description?}
  */
@@ -37,7 +38,7 @@ export async function register(
   }
 }
 
-/*
+/* This is a description of the backend:
  * POST @  /auth/login
  * body: { email, password }
  */
@@ -55,7 +56,7 @@ export async function login(
   }
 }
 
-/*
+/* This is a description of the backend:
  * POST @  /auth/logout
  * headers: Authorization: Bearer token
  */
@@ -70,4 +71,39 @@ export async function logOut() {
 
 export function refreshUser(token: string) {
   setAuthHeader(token);
+}
+
+/* This is a description of the backend:
+ * PATCH @  /users/:id
+ * body: { name, email, role, profession?,  description?}
+ * headers: Authorization: Bearer token
+ */
+export async function update(
+  id: number,
+  credentials: UpdateUserDto
+): Promise<UserResponseDto | null> {
+  try {
+    const res = await axios.patch(`/users/${id}`, credentials);
+    setAuthHeader(res.data.token);
+
+    return res.data;
+  } catch (error) {
+    Notify.failure(
+      "Oops, such a user may already exist! Try entering other data."
+    );
+    throw new Error("Updation failed");
+  }
+}
+
+/* This is a description of the backend:
+ * DELETE @  /users/:id
+ * headers: Authorization: Bearer token
+ */
+export async function deleteProfile(id: number) {
+  try {
+    await axios.delete(`/users/${id}`);
+    clearAuthHeader();
+  } catch (error) {
+    return new Error("Oops, something went wrong!");
+  }
 }

@@ -3,7 +3,7 @@ import { UserData, Role } from "../ui/types/users/dto/user-response.dto";
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
-/*
+/* This is a description of the backend:
  * GET @  /users/role/:role
  * body: { role}
  * headers: Authorization: Bearer token
@@ -35,7 +35,7 @@ export async function findAllUserRole(
   }
 }
 
-/*
+/* This is a description of the backend:
  * GET @  /users/:id
  * body: { role}
  * headers: Authorization: Bearer token

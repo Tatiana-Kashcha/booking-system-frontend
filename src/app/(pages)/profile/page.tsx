@@ -1,3 +1,4 @@
+import { EditForm } from "@/app/ui/components/EditForm/EditForm";
 import styles from "./page.module.css";
 
 export default function ProfilePage() {
@@ -5,7 +6,11 @@ export default function ProfilePage() {
     <main>
       <section>
         <div className={styles.container}>
-          <h2>My profile Page</h2>
+          <div className={styles.profile_div}>
+            <h2 className={styles.title}>My profile card</h2>
+            <EditForm />
+            
+          </div>
         </div>
       </section>
     </main>
