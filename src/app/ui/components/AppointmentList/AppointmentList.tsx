@@ -25,10 +25,6 @@ export const AppointmentList = () => {
     AppointmentBusinessDto[] | null
   >([]);
 
-  console.log(role);
-  console.log(clientAppointment);
-  console.log(businessAppointment);
-
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (!token) return;

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import { deleteProfile } from "@/app/actions/auth";
 import styles from "./AppointmensBtn.module.css";
 
 export const AppointmensBtn = ({
@@ -18,7 +17,7 @@ export const AppointmensBtn = ({
   const handleCancel = async () => {
     try {
       setIsDisabledCancel(true);
-      await deleteProfile(id);
+      // await deleteProfile(id);
     } catch (error) {
       console.error(error);
     } finally {
@@ -29,7 +28,7 @@ export const AppointmensBtn = ({
   const handleConfirm = async () => {
     try {
       setIsDisabledConfirm(true);
-      await deleteProfile(id);
+      // await deleteProfile(id);
     } catch (error) {
       console.error(error);
     } finally {

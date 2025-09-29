@@ -2,6 +2,7 @@
     padding: 20px;
     background-color: #FFFFFF;
     border-radius: 8px;
+    margin-bottom: 40px;
 
 }
 
@@ -50,4 +51,19 @@
     padding: 10px;
     border-radius: 8px;
     border: #1c9dee solid 1px
+
+}
+
+.calendar_div {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 40px;
+
+}
+
+.calendar_title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #000;
 }

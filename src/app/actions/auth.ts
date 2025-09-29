@@ -7,6 +7,8 @@ import {
 } from "../ui/types/users/dto/create-user.dto";
 import { UserResponseDto } from "../ui/types/users/dto/user-response.dto";
 import { UpdateUserDto } from "../ui/types/users/dto/update-user.dto";
+import { CreateAppointmentDto } from "../ui/types/appointments/dto/create-appointment.dto";
+import { AppointmentClientDto } from "../ui/types/appointments/dto/appointment-response.dto";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -105,5 +107,23 @@ export async function deleteProfile(id: number) {
     clearAuthHeader();
   } catch (error) {
     return new Error("Oops, something went wrong!");
+  }
+}
+
+/* This is a description of the backend:
+ * POST @  /appointments
+ * headers: Authorization: Bearer token
+ */
+
+export async function createApointments(
+  createAppointmentDto: CreateAppointmentDto
+): Promise<AppointmentClientDto> {
+  try {
+    const res = await axios.post("/appointments", createAppointmentDto);
+
+    return res.data;
+  } catch (error) {
+    Notify.failure("Oops, something went wrong!");
+    throw new Error("Create apointments failed");
   }
 }
