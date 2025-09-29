@@ -1,5 +1,5 @@
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-import { UserData, Role } from "../ui/types/users/dto/user-response.dto";
+import { UserData } from "../ui/types/users/dto/user-response.dto";
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 

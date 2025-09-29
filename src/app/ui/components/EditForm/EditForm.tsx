@@ -22,8 +22,6 @@ export const EditForm = () => {
 
   const [isDisabled, setIsDisabled] = useState(false);
 
-  console.log(currentUser);
-
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (!token) return;

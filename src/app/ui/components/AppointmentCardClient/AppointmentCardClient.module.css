@@ -2,21 +2,20 @@
     padding: 20px;
     background-color: #FFFFFF;
     border-radius: 8px;
-
 }
 
 .descriptions_div {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .photo {
-    border-radius: 50%;
-    object-fit: cover;
+  border-radius: 50%;
+  object-fit: cover;
 }
-
+  
 .thumb {
     width: 100px;
     height: 100px;
@@ -30,12 +29,17 @@
     color: #000;
 }
 
+.title:hover {
+    text-decoration: underline;
+    color: #1c9dee;
+}
+
 .descriptions {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    min-width: 340px;
+    min-width: 300px;
 }
 
 .descriptions_span {
@@ -44,10 +48,21 @@
     color: #1c9dee
 }
 
-.p_profession {
+.button_appointments {
+    padding: 6px 28px;
+    background-color: #5eaedc;
+    color: white;
     font-weight: bold;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 8px;
-    border: #1c9dee solid 1px
+    border: 1px solid #5eaedc;
+    border-radius: 4px;
+    max-height: 18px;
+    text-decoration: none;
+
 }
+
+.button_appointments:hover {
+    background-color: white;
+    color: #52819c;
+}
+
+

@@ -1,0 +1,26 @@
+.apointments_div {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: #1c9dee solid 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.descriptions_span {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1c9dee
+}
+
+.descriptions_status {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1bb743;
+    border: 2px solid #1bb743;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
