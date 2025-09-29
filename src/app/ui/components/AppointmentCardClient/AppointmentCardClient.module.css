@@ -49,9 +49,10 @@
 }
 
 .button_appointments {
-    padding: 6px 28px;
+    padding: 6px 10px;
     background-color: #5eaedc;
     color: white;
+    width: 75px;
     font-weight: bold;
     border: 1px solid #5eaedc;
     border-radius: 4px;

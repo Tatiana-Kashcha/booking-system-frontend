@@ -8,7 +8,10 @@ import {
 import { UserResponseDto } from "../ui/types/users/dto/user-response.dto";
 import { UpdateUserDto } from "../ui/types/users/dto/update-user.dto";
 import { CreateAppointmentDto } from "../ui/types/appointments/dto/create-appointment.dto";
-import { AppointmentClientDto } from "../ui/types/appointments/dto/appointment-response.dto";
+import {
+  AppointmentClientDto,
+  AppointmentResponseDto,
+} from "../ui/types/appointments/dto/appointment-response.dto";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -125,5 +128,36 @@ export async function createApointments(
   } catch (error) {
     Notify.failure("Oops, something went wrong!");
     throw new Error("Create apointments failed");
+  }
+}
+
+/* This is a description of the backend:
+ * DELETE @  /appointments/:id
+ * headers: Authorization: Bearer token
+ */
+export async function deleteApointment(id: number) {
+  try {
+    await axios.delete(`/appointments/${id}`);
+  } catch (error) {
+    return new Error("Oops, something went wrong!");
+  }
+}
+
+/* This is a description of the backend:
+ * PATCH @  appointments/status/:id
+ * body: { id, status}
+ * headers: Authorization: Bearer token
+ */
+export async function updateAppointmentStatus(
+  id: number,
+  status: string
+): Promise<AppointmentResponseDto | null> {
+  try {
+    const res = await axios.patch(`/appointments/status/${id}`, { status });
+
+    return res.data;
+  } catch (error) {
+    Notify.failure("Oops, something went wrong!");
+    throw new Error("Updation failed");
   }
 }

@@ -7,12 +7,13 @@
 }
 
 .button_delete {
-    padding: 6px 16px;
-    background-color: #e92f2f;
+    padding: 6px 10px;
+    background-color: #ee7070;
     color: white;
+    width: 95px;
     font-size: 16px;
     font-weight: bold;
-    border: 1px solid #e92f2f;
+    border: 1px solid #ee7070;
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
@@ -25,13 +26,14 @@
 
 .button_delete:hover {
     background-color: white;
-    color: #e92f2f;
+    color: #ec5252;
 }
 
 .button_confirm {
-    padding: 6px 12px;
+    padding: 6px 10px;
     background-color: #1bb743;
     color: white;
+    width: 95px;
     font-size: 16px;
     font-weight: bold;
     border: 1px solid #1bb743;
