@@ -8,12 +8,9 @@ export const Appointment = ({ data }: { data: AppointmentBaseDto }) => {
       <p>
         Appointment date •{" "}
         <span className={styles.descriptions_span}>
-          {
-            new Date(data.appointment_date)
-              .toISOString()
-              .replace("T", " ")
-              .split(".")[0]
-          }
+          {new Date(data.appointment_date).toLocaleString("uk-UA", {
+            timeZone: "Europe/Kyiv",
+          })}
         </span>
       </p>
 
