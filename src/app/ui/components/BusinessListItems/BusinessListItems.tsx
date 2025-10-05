@@ -3,11 +3,15 @@ import Link from "next/link";
 import { UserData } from "../../types/users/dto/user-response.dto";
 import styles from "./BusinessListItems.module.css";
 
+type BusinessListItemsProps = {
+  userBusiness: UserData;
+  currentUserId?: number;
+};
+
 export const BusinessListItems = ({
   userBusiness,
-}: {
-  userBusiness: UserData;
-}) => {
+  currentUserId,
+}: BusinessListItemsProps) => {
   return (
     <div className={styles.business_div}>
       <div className={styles.descriptions_div}>
@@ -21,9 +25,14 @@ export const BusinessListItems = ({
           />
         </div>
         <div>
-          <Link href={`/business/${userBusiness.id}`}>
-            <h3 className={styles.title}>{userBusiness.name}</h3>
-          </Link>
+          {userBusiness.id === currentUserId ? (
+            <h3 className={styles.title_current}>{userBusiness.name}</h3>
+          ) : (
+            <Link href={`/business/${userBusiness.id}`}>
+              <h3 className={styles.title}>{userBusiness.name}</h3>
+            </Link>
+          )}
+
           <div className={styles.descriptions}>
             <p>
               Email •{" "}
@@ -39,12 +48,16 @@ export const BusinessListItems = ({
             </p>
           </div>
         </div>
-        <Link
-          href={`/business/${userBusiness.id}`}
-          className={styles.button_appointments}
-        >
-          Visit
-        </Link>
+        {userBusiness.id === currentUserId ? (
+          <p className={styles.button_current}>Visit</p>
+        ) : (
+          <Link
+            href={`/business/${userBusiness.id}`}
+            className={styles.button_appointments}
+          >
+            Visit
+          </Link>
+        )}
       </div>
       <p className={styles.p_profession}>
         {userBusiness.description ? userBusiness.description : ""}

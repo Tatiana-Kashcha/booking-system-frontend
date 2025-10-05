@@ -33,6 +33,12 @@
     color: #1c9dee;
 }
 
+.title_current {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
 .descriptions {
     display: flex;
     flex-direction: column;
@@ -62,6 +68,20 @@
     background-color: white;
     color: #52819c;
 }
+
+.button_current {
+    padding: 10px 16px;
+    background-color: #5eaedc;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #5eaedc;
+    border-radius: 4px;
+    max-height: 20px;
+    text-decoration: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 
 .p_profession {
     font-weight: bold;
