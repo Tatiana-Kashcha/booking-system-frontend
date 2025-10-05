@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { UserData } from "../../types/users/dto/user-response.dto";
+import { UserData, Role } from "../../types/users/dto/user-response.dto";
 import styles from "./BusinessListItems.module.css";
 
 type BusinessListItemsProps = {
   userBusiness: UserData;
-  currentUserId?: number;
+  currentUserRole?: Role;
 };
 
 export const BusinessListItems = ({
   userBusiness,
-  currentUserId,
+  currentUserRole,
 }: BusinessListItemsProps) => {
   return (
     <div className={styles.business_div}>
@@ -25,7 +25,7 @@ export const BusinessListItems = ({
           />
         </div>
         <div>
-          {userBusiness.id === currentUserId ? (
+          {userBusiness.role === currentUserRole ? (
             <h3 className={styles.title_current}>{userBusiness.name}</h3>
           ) : (
             <Link href={`/business/${userBusiness.id}`}>
@@ -48,7 +48,7 @@ export const BusinessListItems = ({
             </p>
           </div>
         </div>
-        {userBusiness.id === currentUserId ? (
+        {userBusiness.role === currentUserRole ? (
           <p className={styles.button_current}>Visit</p>
         ) : (
           <Link

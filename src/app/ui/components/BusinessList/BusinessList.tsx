@@ -12,7 +12,7 @@ import styles from "./BusinessList.module.css";
 export const BusinessList = () => {
   const [businessArr, setBusinessArr] = useState<UserData[] | null>([]);
   const [currentUser, setCurrentUser] = useState<UserData | null>(null);
-  const currentUserId = currentUser?.id;
+  const currentUserRole = currentUser?.role;
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
@@ -44,7 +44,7 @@ export const BusinessList = () => {
           <li key={item.id}>
             <BusinessListItems
               userBusiness={item}
-              currentUserId={currentUserId}
+              currentUserRole={currentUserRole}
             />
           </li>
         ))}
